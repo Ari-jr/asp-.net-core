@@ -1,10 +1,10 @@
 ﻿@{
     var head = "App Razor";
-    var titulo = "Minha primeira aplicação Razor";
-    var paragrafo1 = "Razor é uma forma de marcação do ASP.Net para linguagens de programação.";
-    var paragrafo2 = "ASP. Net é uma plataforma de desenvolvimento de páginas dinÂmicas para criar aplicações web";
 
-    string[] linguagens = { "C#", "Java", "PHP", "Python", "Visual Basic .Net", "TypeScript" };
+    var titulo = "Resultado da prova";
+    string[] alunos = { "João", "Maria", "Ana", "Jorge", "Pedro", "Ines" };
+    int[] notas = { 4, 7, 7, 9, 2, 9 };
+    var resultado = "";
 }
 
 <!DOCTYPE html>
@@ -17,14 +17,14 @@
 <body>
     <div>
         <h1>@titulo</h1>   
-        <p>@paragrafo1</p>
-        <p>@paragrafo2</p>
-
-        <h3>Linguagens de programação</h3>
+     
+        
         <ul>
-            @foreach (var linguagem in linguagens)
+            @for (int i = 0; i < alunos.Length; i++)
             {
-                <li>@linguagem</li>
+                <li>
+                    @("Aluno: " + alunos[i] + ", nota:" + notas[i])
+                </li>
             }
         </ul>
     </div>
