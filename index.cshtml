@@ -13,6 +13,7 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>@head</title>
+    <link href="Style.css" rel="stylesheet"/>
 </head>
 <body>
     <div>
@@ -22,8 +23,12 @@
         <ul>
             @for (int i = 0; i < alunos.Length; i++)
             {
-                <li>
-                    @("Aluno: " + alunos[i] + ", nota:" + notas[i])
+                if (notas[i] >= 5)
+                { resultado = "aprovado"; }
+                else
+                { resultado = "reprovado"; }
+                <li class="@resultado">
+                    @("Aluno: " + alunos[i] + ", nota:" + notas[i] + " resultado: " + resultado)
                 </li>
             }
         </ul>
